@@ -19,6 +19,9 @@ class API {
     // API Objects
     private $URI;
 
+    /**
+     * API constructor.
+     */
     public function __construct() {
 
         // Initialize Configurator if class exists
@@ -77,6 +80,13 @@ class API {
         }
     }
 
+    /**
+     * Send the output
+     *
+     * @param $data
+     * @param array $httpHeaders
+     * @return void
+     */
     private function sendOutput($data, $httpHeaders=array()) {
 
         // Remove the default Set-Cookie header
@@ -103,6 +113,11 @@ class API {
         exit;
     }
 
+    /**
+     * Check if the required modules are installed
+     *
+     * @return bool
+     */
     protected function isInstalled(){
 
         // Retrieve the list of required modules
